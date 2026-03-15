@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="UTF-8">
-<title>AI Hackathon</title>
+<title>Clair de Lune</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -15,13 +15,14 @@
 
 <nav class="nav">
 
-<div class="logo">AI Hackathon</div>
+<div class="nav-logo">
+<img src="images/Logo.png" class="nav-logo-img">
+</div>
 
 <div class="menu">
-<a href="#">About</a>
-<a href="#">Schedule</a>
-<a href="#">Prizes</a>
-<a href="#">Register</a>
+<a href="#about">About</a>
+<a href="#branches">Branches</a>
+<a href="#register">Register</a>
 </div>
 
 </nav>
@@ -30,18 +31,16 @@
 
 <section class="hero">
 
-<h1>
-Build the Future<br>
-with Artificial Intelligence
-</h1>
+<img src="images/Logo.png" class="hero-logo">
 
-<p>
-A 24-hour hackathon for developers, designers and builders.
+<p class="subtitle">
+A multidisciplinary creative event celebrating imagination,
+art, and interactive media.
 </p>
 
-<div class="cta">
+<div class="cta" id="register">
 
-<button id="registerBtn">Register Now</button>
+<button id="registerBtn">Register</button>
 
 <div class="countdown">
 <span id="days">00</span>d
@@ -55,39 +54,50 @@ A 24-hour hackathon for developers, designers and builders.
 
 
 
-<section class="section">
+<section class="section about" id="about">
 
 <h2>About the Event</h2>
 
 <p>
-Join a community of builders creating the next generation of AI
-applications. Form teams, build something amazing, and present your
-project to judges.
+Clair de Lune is a creative showcase where artists, developers,
+writers, and designers collaborate across different mediums.
+Participants explore storytelling, interactive experiences,
+and artistic expression across multiple creative fields.
 </p>
 
 </section>
 
 
 
-<section class="section">
+<section class="section branches" id="branches">
 
-<h2>Prizes</h2>
+<h2>Event Branches</h2>
 
-<div class="prize-grid">
+<div class="branch-grid">
 
-<div class="prize">
-<h3>🥇 First</h3>
-<p>$1000 + swag</p>
+<div class="branch">
+<h3>🎮 Game Development</h3>
+<p>Create interactive worlds and gameplay experiences.</p>
 </div>
 
-<div class="prize">
-<h3>🥈 Second</h3>
-<p>$500 + swag</p>
+<div class="branch">
+<h3>🎨 Digital Art</h3>
+<p>Illustration, concept art, and visual storytelling.</p>
 </div>
 
-<div class="prize">
-<h3>🥉 Third</h3>
-<p>$250 + swag</p>
+<div class="branch">
+<h3>🎵 Music Design</h3>
+<p>Compose soundtracks and immersive audio.</p>
+</div>
+
+<div class="branch">
+<h3>🧊 3D Modeling</h3>
+<p>Build environments, characters, and objects.</p>
+</div>
+
+<div class="branch">
+<h3>✍ Creative Writing</h3>
+<p>Craft narratives, dialogue, and worldbuilding.</p>
 </div>
 
 </div>
@@ -98,7 +108,7 @@ project to judges.
 
 <footer class="footer">
 
-<p>© 2026 AI Hackathon</p>
+<p>© 2026 Clair de Lune</p>
 
 </footer>
 
