@@ -4,278 +4,121 @@ padding:0;
 box-sizing:border-box;
 }
 
-body{
-font-family:Inter, sans-serif;
-color:white;
-overflow-x:hidden;
-background:#0b1120;
+html{
+scroll-behavior:smooth;
 }
 
-/* NAVBAR */
+body{
+font-family:Poppins, sans-serif;
+transition:background 0.8s ease,color 0.8s ease;
+background:black;
+color:white;
+}
 
-.nav{
+#starCanvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-2;
+pointer-events:none;
+}
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+height:70px;
+
 display:flex;
 justify-content:space-between;
 align-items:center;
 
-padding:20px 60px;
+padding:0 40px;
 
-background:rgba(0,0,0,0.35);
-backdrop-filter:blur(8px);
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
 
-position:fixed;
-top:0;
-width:100%;
-z-index:10;
+z-index:1000;
 }
 
-.nav-logo-img{
-height:40px;
-}
-
-/* MENU */
-
-.menu{
-display:flex;
-gap:30px;
-}
-
-.menu a{
+.navbar nav a{
+margin-left:25px;
 text-decoration:none;
-color:#cbd5f5;
-transition:0.3s;
-}
-
-.menu a:hover{
 color:white;
+font-weight:500;
 }
 
-/* HERO */
-
-.hero{
-
-min-height:100vh;
+#hero{
+position:relative;
+height:100vh;
+overflow:hidden;
 
 display:flex;
-flex-direction:column;
+align-items:center;
 justify-content:center;
-align-items:center;
-
-padding:160px 20px 120px 20px;
-
-text-align:center;
-
-background:linear-gradient(
-120deg,
-#0b1120,
-#111827,
-#0b1120
-);
-
-background-size:200% 200%;
-
-animation:heroGradient 80s linear infinite;
-
 }
 
-@keyframes heroGradient{
+#moonCanvas{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+.moonTitle{
+font-size:60px;
+color:#0a0a0a;
 
-0%{
-background-position:0% 50%;
+text-shadow:
+0 0 30px rgba(255,255,255,0.2),
+0 0 80px rgba(255,255,255,0.1);
+
+letter-spacing:6px;
 }
 
-100%{
-background-position:100% 50%;
-}
-
-}
-
-.hero-logo{
-width:520px;
-max-width:90%;
-margin-bottom:20px;
-}
-
-.subtitle{
-font-size:22px;
-color:#cbd5f5;
-margin-bottom:40px;
-}
-
-/* CTA */
-
-.cta{
+section{
+height:100vh;
 display:flex;
-flex-direction:column;
 align-items:center;
-gap:25px;
-}
-
-/* BUTTON */
-
-.hero button{
-
-padding:16px 40px;
-font-size:18px;
-border:none;
-border-radius:12px;
-
-background:#6366f1;
-color:white;
-cursor:pointer;
-
-box-shadow:
-0 0 10px rgba(99,102,241,0.6),
-0 0 25px rgba(99,102,241,0.5);
-
-transition:0.3s;
-
-}
-
-.hero button:hover{
-
-transform:translateY(-4px);
-
-box-shadow:
-0 0 20px rgba(99,102,241,1),
-0 0 50px rgba(99,102,241,0.8);
-
-}
-
-/* COUNTDOWN */
-
-.countdown{
-font-size:20px;
-color:#cbd5f5;
-}
-
-/* ABOUT SECTION */
-
-.about{
-
-padding:140px 20px;
+justify-content:center;
 text-align:center;
-
-background:linear-gradient(
-140deg,
-#111827,
-#1f2937,
-#111827
-);
-
-background-size:200% 200%;
-
-animation:aboutGradient 90s linear infinite;
-
 }
 
-@keyframes aboutGradient{
-
-0%{
-background-position:0% 50%;
-}
-
-100%{
-background-position:100% 50%;
-}
-
-}
-
-.about h2{
+h2{
 font-size:40px;
-margin-bottom:20px;
 }
 
-.about p{
-max-width:800px;
-margin:auto;
-color:#d1d5db;
-font-size:18px;
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:0.8s;
 }
 
-/* BRANCHES */
-
-.branches{
-
-padding:140px 20px;
-text-align:center;
-
-background:linear-gradient(
-160deg,
-#1e293b,
-#0f172a,
-#1e293b
-);
-
-background-size:200% 200%;
-
-animation:branchGradient 100s linear infinite;
-
+.fade.show{
+opacity:1;
+transform:translateY(0);
 }
 
-@keyframes branchGradient{
-
-0%{
-background-position:0% 50%;
+body[data-section="gamedev"]{
+background:#0f172a;
 }
 
-100%{
-background-position:100% 50%;
+body[data-section="modeling"]{
+background:#111827;
 }
 
+body[data-section="music"]{
+background:#1e1b4b;
 }
 
-.branches h2{
-font-size:40px;
-margin-bottom:40px;
+body[data-section="writing"]{
+background:#fdf6e3;
+color:#222;
 }
 
-/* BRANCH GRID */
-
-.branch-grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
-
-max-width:1000px;
-margin:auto;
-
-}
-
-.branch{
-
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-border-radius:16px;
-
-padding:30px;
-
-transition:0.3s;
-
-}
-
-.branch:hover{
-
-transform:translateY(-8px);
-
-border:1px solid rgba(255,255,255,0.2);
-
-}
-
-.branch h3{
-margin-bottom:10px;
-}
-
-/* FOOTER */
-
-.footer{
-
-padding:80px;
-text-align:center;
-
-background:#020617;
-
-color:#94a3b8;
-
+body[data-section="art"]{
+background:#18181b;
 }

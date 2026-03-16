@@ -1,119 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
 <meta charset="UTF-8">
-<title>Clair de Lune</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Clair de Lune Fest</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<nav class="nav">
+<canvas id="starCanvas"></canvas>
 
-<div class="nav-logo">
-<img src="images/Logo.png" class="nav-logo-img">
-</div>
+<header class="navbar">
 
-<div class="menu">
-<a href="#about">About</a>
-<a href="#branches">Branches</a>
-<a href="#register">Register</a>
-</div>
+<div class="logo">Clair de Lune</div>
 
+<nav>
+<a href="#gamedev">Game Dev</a>
+<a href="#modeling">3D Modeling</a>
+<a href="#music">Music</a>
+<a href="#writing">Writing</a>
+<a href="#art">Digital Art</a>
 </nav>
 
+</header>
 
+<section id="hero">
 
-<section class="hero">
+<canvas id="moonCanvas"></canvas>
 
-<img src="images/Logo.png" class="hero-logo">
-
-<p class="subtitle">
-A multidisciplinary creative event celebrating imagination,
-art, and interactive media.
-</p>
-
-<div class="cta" id="register">
-
-<button id="registerBtn">Register</button>
-
-<div class="countdown">
-<span id="days">00</span>d
-<span id="hours">00</span>h
-<span id="minutes">00</span>m
-</div>
-
+<div class="content fade hero-text">
+<h1 class="moonTitle">Clair de Lune</h1>
 </div>
 
 </section>
 
-
-
-<section class="section about" id="about">
-
-<h2>About the Event</h2>
-
-<p>
-Clair de Lune is a creative showcase where artists, developers,
-writers, and designers collaborate across different mediums.
-Participants explore storytelling, interactive experiences,
-and artistic expression across multiple creative fields.
-</p>
-
+<section id="gamedev">
+<div class="content fade">
+<h2>Game Development</h2>
+</div>
 </section>
 
-
-
-<section class="section branches" id="branches">
-
-<h2>Event Branches</h2>
-
-<div class="branch-grid">
-
-<div class="branch">
-<h3>🎮 Game Development</h3>
-<p>Create interactive worlds and gameplay experiences.</p>
+<section id="modeling">
+<div class="content fade">
+<h2>3D Modeling</h2>
 </div>
-
-<div class="branch">
-<h3>🎨 Digital Art</h3>
-<p>Illustration, concept art, and visual storytelling.</p>
-</div>
-
-<div class="branch">
-<h3>🎵 Music Design</h3>
-<p>Compose soundtracks and immersive audio.</p>
-</div>
-
-<div class="branch">
-<h3>🧊 3D Modeling</h3>
-<p>Build environments, characters, and objects.</p>
-</div>
-
-<div class="branch">
-<h3>✍ Creative Writing</h3>
-<p>Craft narratives, dialogue, and worldbuilding.</p>
-</div>
-
-</div>
-
 </section>
 
+<section id="music">
+<div class="content fade">
+<h2>Music Design</h2>
+</div>
+</section>
 
+<section id="writing">
+<div class="content fade writing-style">
+<h2>Creative Writing</h2>
+</div>
+</section>
 
-<footer class="footer">
+<section id="art">
+<div class="content fade">
+<h2>Digital Art</h2>
+</div>
+</section>
 
-<p>© 2026 Clair de Lune</p>
-
+<footer>
+<p>© Clair de Lune Fest</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 
-
+<script src="stars.js"></script>
+<script src="moon.js"></script>
 <script src="script.js"></script>
 
 </body>

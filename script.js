@@ -1,29 +1,60 @@
-const registerBtn = document.getElementById("registerBtn")
+const sections = document.querySelectorAll("section")
 
-registerBtn.addEventListener("click", () => {
+const music = new Audio("music.mp3")
+music.loop = true
+music.volume = 0
 
-registerBtn.innerText = "Registration Opening Soon 🚀"
+let musicStarted = false
 
+function startMusic(){
+if(!musicStarted){
+music.play().catch(()=>{})
+musicStarted = true
+}
+}
+
+document.addEventListener("click", startMusic,{once:true})
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+document.body.setAttribute("data-section", entry.target.id)
+
+entry.target.querySelectorAll(".fade").forEach(el=>{
+el.classList.add("show")
 })
-
-const eventDate = new Date("2026-08-01")
-
-function updateCountdown(){
-
-const now = new Date()
-
-const diff = eventDate - now
-
-const days = Math.floor(diff / (1000*60*60*24))
-const hours = Math.floor(diff / (1000*60*60) % 24)
-const minutes = Math.floor(diff / (1000*60) % 60)
-
-document.getElementById("days").innerText = days
-document.getElementById("hours").innerText = hours
-document.getElementById("minutes").innerText = minutes
 
 }
 
-setInterval(updateCountdown,1000)
+})
 
-updateCountdown()
+},{threshold:0.4})
+
+sections.forEach(section=>observer.observe(section))
+
+const musicSection = document.getElementById("music")
+
+function updateMusicVolume(){
+
+const rect = musicSection.getBoundingClientRect()
+
+const center = window.innerHeight/2
+const sectionCenter = rect.top + rect.height/2
+
+const distance = Math.abs(center-sectionCenter)
+
+const maxDistance = window.innerHeight
+
+let volume = 1-(distance/maxDistance)
+
+volume=Math.max(0,Math.min(1,volume))
+
+music.volume=volume*0.8
+
+}
+
+window.addEventListener("scroll",updateMusicVolume)
+window.addEventListener("load",updateMusicVolume)
